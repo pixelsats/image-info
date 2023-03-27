@@ -1,0 +1,33 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Get data from URL</h1><br>
+        <form id="datafromurlform" method="post" enctype="application/json">
+            <input type="text" class="form-control" placeholder="URL" name="url">
+            <input type="submit" value="Show data" class="btn btn-default">    
+        </form>
+        <div id="datafromurlresult"></div>
+
+        <br><br>
+        <h1>Get data from local file</h1><br>
+        <form id="datafromimageform" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" />
+            <input type="submit" value="Show data" class="btn btn-default">    
+        </form>
+        <div id="datafromimageresult"></div>
+
+        <br><br>
+        <h1>Update meta data to local file</h1><br>
+        <form id="datatoimageform" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" />
+            <input type="text" class="form-control" placeholder="Max supply" name="datasupply">
+            <input type="text" class="form-control" placeholder="File value" name="datavalue">
+            <input type="text" class="form-control" placeholder="File name" name="dataname">
+            <input type="submit" value="Get new image with data" class="btn btn-default">    
+        </form>
+        <div id="datatoimageresult"></div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
