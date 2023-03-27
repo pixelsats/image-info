@@ -13,7 +13,9 @@ async function urlmetadata(imgurl) {
         if (tags['xmp'] === undefined) {
             return "No XMP data found";
         } else {
-            return tags['xmp'];
+            const xmponly = tags['xmp'];
+            const { ['_raw']: rawonly, ...tagswithoutraw } = xmponly 
+            return tagswithoutraw;
         }
 
     } catch (err) {
@@ -31,7 +33,9 @@ async function buffermetadata(imgbuffer) {
         if (tags['xmp'] === undefined) {
             return "No XMP data found";
         } else {
-            return tags['xmp'];
+            const xmponly = tags['xmp'];
+            const { ['_raw']: rawonly, ...tagswithoutraw } = xmponly 
+            return tagswithoutraw;
         }
 
     } catch (err) {
