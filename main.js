@@ -59,11 +59,13 @@ app.post('/datatoimage', (req, res) => {
     //const fileBuffer = uploadedFile.data;
     const fileName = uploadedFile.tempFilePath;
 
-    const datasupply = req.body.datasupply;
-    const datavalue = req.body.datavalue;
-    const dataname = req.body.dataname;
+    const satssupply = req.body.satssupply;
+    const satsvalue = req.body.satsvalue;
+    const satsname = req.body.satsname;
+    const satstotalsupply = req.body.satstotalsupply;
+    const satsitems = req.body.satsitems;
     
-    writemetadata(fileName, datasupply, datavalue, dataname).then(data => {
+    writemetadata(fileName, satssupply, satsvalue, satsname, satstotalsupply, satsitems).then(data => {
         res.status(200).send({ data: "data:image/png;base64," + fs.readFileSync(fileName, 'base64') });
     })
     .catch(err => {
